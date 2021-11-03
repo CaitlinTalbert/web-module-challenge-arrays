@@ -161,9 +161,16 @@ Use the removeFlavorByName function below to do the following:
 //remove exact match- loop through array and check every index for the exact match of the string if it exists then remove it using splice 
 //splice takes two arguments, (start, how many items to delete)
 //outside of loop return array 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/}
+function removeFlavorByName(array, string){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === string){
+      array.splice(i,1);
+    }
+  }
+  return array; 
+}
 
+console.log('task 6:', removeFlavorByName(originalFlavors, 'Rocky Road')); 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
