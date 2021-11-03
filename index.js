@@ -44,8 +44,9 @@ Use the copy function below to do the following:
   1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
   2. Return a copy of the received array  
 */
-
+//take one parameter- you can call it anything, but its holding the place for the array you will passin as you argument 
 function copy(/*your code here*/){
+  //take a spread of your parameter
   /*your code here*/
 }    
 
@@ -63,10 +64,12 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
+//take one parameter - its holding the place for an array 
 function is31Flavors(/*your code here*/){
  /*your code here*/
+ //how do we check if something is true or false? a conditional, so condistion inside of here, if true then true else returns false 
 }
+//exactly 31 items inside array 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -79,8 +82,9 @@ Use the addFlavor function below to do the following:
 
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
-
-
+//receive array , two parameters, and a string to hold place for the new flavor
+//add something to front of array using unshift to add new flavor to the beginning of the received array 
+//return the array 
 function addFlavor(/*your code here*/){
  /*your code here*/
 }
@@ -96,7 +100,8 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
-
+//recieve array. 1 parameter, place holder for new array
+//use pop to remove last item then return array 
 function removeLastFlavor(/*your code here*/){
  /*your code here*/
 }
@@ -113,6 +118,9 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
+//two parameters array/number, holding place for an index 
+// return array at index 0 array[0]
+
 
 function getFlavorByIndex(/*your code here*/){
   /*your code here*/
@@ -133,7 +141,10 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
-
+// parameters array/string we want to remove 
+//remove exact match- loop through array and check every index for the exact match of the string if it exists then remove it using splice 
+//splice takes two arguments, (start, how many items to delete)
+//outside of loop return array 
 function removeFlavorByName(/*your code here*/){
   /*your code here*/
 }
@@ -154,16 +165,29 @@ Use the filterByWord function below to do the following:
   5. Return the new array that contains the filtered flavors
 
   For example: filterByWord(originalFlavors, "Chocolate") should return ["Chocolate", "Chocolate Almond", "Chocolate Chip", "Chocolate Fudge", "Chocolate Mint", "Chocolate Ribbon"]
-
+//two parameters (array, string)
+//looking for every instance, not exact match so use includes method
   HINT - you can use the .includes method to help you solve this
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, string){
+  //create new array to push results to 
+  const filtered = [];
+  //loop through provided array and check every index
+  for(let i = 0; i < array.length; i++){
+    if(array[i].includes(string)){
+      filtered.push(array[i]);
+    }
+  }
+  //if the index includes the string
+  //push it to the new array 
+  //outside of the loop returns the new array 
+  return filtered;
 }
 
+console.log('task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
